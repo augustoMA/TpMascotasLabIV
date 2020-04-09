@@ -1,0 +1,25 @@
+<body>
+    <div>
+        <div>
+            Nombre <input [(ngModel)]="name" type="text" >
+            <br>
+            <br>
+            Foto   <input [(ngModel)]="url" type="text">
+            <br>
+            <br>
+            Tipo   <select [(ngModel)]="tipo" name="tipo" id="tipo">
+                <option value="perro">perro</option>
+                <option value="gato">gato</option>
+                <option value="pez">pez</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" value="Enviar" (click)="Enviar()">
+        </div>
+        <div *ngFor="let mascota of listaMascotas;">
+            <app-mascota [mascota]="mascota">
+            </app-mascota>
+        </div>
+    </div>    
+</body>
+
