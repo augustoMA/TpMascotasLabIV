@@ -1,6 +1,5 @@
 <body>
-    <div>   
-        <h3 [style]="mascota.color">{{mascota.nombre}}</h3>
-        <input type="button" value="Ver Detalle" (click)="emitDetail()"> 
-    </div>
+    <div *ngFor="let mascota of listaMascotas; let mascotaIndex = index">
+        <app-mascota [mascota]="mascota" [mascotaIndex]="mascotaIndex"></app-mascota>
+      </div>
 </body>

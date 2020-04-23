@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Mascota } from 'src/app/clases/mascota';
+import { isNull } from 'util';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
@@ -12,18 +14,27 @@ export class CargaMascotaComponent implements OnInit {
   name:string;
   url:string;
   tipo:string;
-  listaMascotas:Array<Mascota>=[];
+ /*listaMascotas:Array<Mascota>=[];*/
 
-  constructor() { }
+  constructor(private storage:StorageService) { }
 
   ngOnInit(): void {
+    console.log(this.storage.BringMascota());
     this.name="";
     this.url="";
     this.tipo="";
   }
 
-  public Enviar():void
+/*  public Enviar():void
   {
     this.listaMascotas.push(new Mascota(this.name, this.tipo, this.url));
+  }*/
+
+  public CargarMascota():void{
+    
+    let mascotita = new Mascota(this.name, this.tipo, this.url);
+    
+    this.storage.SaveMascota(mascotita);
+    console.log(mascotita);
   }
 }

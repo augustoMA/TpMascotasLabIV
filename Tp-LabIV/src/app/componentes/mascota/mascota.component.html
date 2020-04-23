@@ -1,9 +1,7 @@
 <body>
-    <app-listado [mascota]="mascota" (showDetail)="showDetail($event)"></app-listado>
-    <div *ngIf="detailState == true">
-    <h2 [style]="mascota.color">{{mascota.nombre}}</h2>
-    <h2>{{mascota.tipo}}</h2>
-    <img [src]="mascota.url">
-    </div>    
+    <div>
+        <h3 [style]="mascota.color">{{mascota.nombre}}</h3>
+        <input type="button" value="Ver Detalle" (click)="showDetail()">
+      </div>  
 </body>
 

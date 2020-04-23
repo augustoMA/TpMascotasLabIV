@@ -1,4 +1,5 @@
 <body>
+    <h1>Ingrese los datos de la mascota</h1>
     <div>
         <div>
             Nombre <input [(ngModel)]="name" type="text" >
@@ -14,12 +15,12 @@
             </select>
             <br>
             <br>
-            <input type="button" value="Enviar" (click)="Enviar()">
+            <input type="button" value="Cargar mascota" (click)="CargarMascota()">
         </div>
-        <div *ngFor="let mascota of listaMascotas;">
+        <!--<div *ngFor="let mascota of listaMascotas;">
             <app-mascota [mascota]="mascota">
             </app-mascota>
-        </div>
+        </div>-->
     </div>    
 </body>
 

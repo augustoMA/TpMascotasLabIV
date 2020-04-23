@@ -4,6 +4,7 @@ export class Mascota {
     tipo:string;
     url:string;
     color:string;
+    id:string;
 
     constructor(nombre,tipo,url){
         
